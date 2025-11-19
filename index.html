@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CollateralLens MVP</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #f4f6f9;
+      color: #333;
+    }
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 { margin: 0; }
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    section {
+      margin-bottom: 30px;
+    }
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .btn {
+      background: #3498db;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .btn:hover { background: #2980b9; }
+    .results {
+      background: #ecf0f1;
+      padding: 15px;
+      border-radius: 6px;
+      margin-top: 15px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #2c3e50;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CollateralLens</h1>
+    <p>No-code dashboard for collateral risk detection & compliance</p>
+  </header>
+
+  <div class="container">
+    <section>
+      <h2>Collateral Intake & Classification</h2>
+      <form id="collateralForm">
+        <label for="assetUpload">Upload Asset List (CSV):</label>
+        <input type="file" id="assetUpload" accept=".csv">
+
+        <label for="borrowerDetails">Borrower Details:</label>
+        <textarea id="borrowerDetails" placeholder="Enter borrower details..."></textarea>
+
+        <label for="loanAgreement">Loan/Security Agreement:</label>
+        <textarea id="loanAgreement" placeholder="Paste agreement text or notes..."></textarea>
+
+        <button type="button" class="btn" onclick="classifyCollateral()">Classify Collateral</button>
+      </form>
+      <div id="results" class="results" style="display:none;"></div>
+    </section>
+
+    <section>
+      <h2>Problem</h2>
+      <ul>
+        <li>Failure to properly identify and register collateral</li>
+        <li>Incorrect jurisdiction registration</li>
+        <li>Missing mandatory details (debtor name, serial-number goods, etc.)</li>
+        <li>Lapses in registration updates</li>
+        <li>Priority rule violations with multiple security interests</li>
+        <li>Compliance issues during restructuring</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Consequences</h2>
+      <ul>
+        <li>Loss of security interest priority</li>
+        <li>Unenforceability against other creditors</li>
+        <li>Major financial and legal liability</li>
+      </ul>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2025 CollateralLens MVP</p>
+  </footer>
+
+  <script>
+    function classifyCollateral() {
+      // Mock classification logic
+      const borrower = document.getElementById("borrowerDetails").value;
+      const agreement = document.getElementById("loanAgreement").value;
+
+      let output = "<h3>Classification Results</h3>";
+      output += "<p><strong>Collateral Types Detected:</strong> Inventory, Equipment, Accounts Receivable</p>";
+      output += "<p><strong>Perfection Required:</strong> UCC Filing, Vehicle Registration</p>";
+      output += "<p><strong>Flags:</strong> Missing serial-number details, jurisdiction check needed</p>";
+      output += "<p><em>(Mock data — integrate backend for real classification)</em></p>";
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.innerHTML = output;
+      resultsDiv.style.display = "block";
+    }
+  </script>
+</body>
+</html>
