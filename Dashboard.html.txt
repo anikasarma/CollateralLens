@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CollateralLens Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f4f6f9; margin:0; }
+    header { background:#2c3e50; color:white; padding:20px; text-align:center; }
+    h1 { margin:0; }
+    .container { max-width:1200px; margin:20px auto; padding:20px; background:white; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
+    table { width:100%; border-collapse:collapse; margin-bottom:30px; }
+    th, td { border:1px solid #ccc; padding:10px; text-align:left; }
+    th { background:#3498db; color:white; }
+    .flag { color:red; font-weight:bold; }
+    nav { text-align:center; margin:15px; }
+    nav a { color:#3498db; font-weight:bold; text-decoration:none; }
+    footer { text-align:center; padding:15px; background:#2c3e50; color:white; margin-top:40px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CollateralLens Dashboard</h1>
+    <p>Monitor collateral, deadlines, and compliance</p>
+  </header>
+
+  <nav>
+    <a href="index.html">← Back to Intake</a>
+  </nav>
+
+  <div class="container">
+    <h2>Collateral Overview</h2>
+    <table>
+      <tr>
+        <th>Collateral Item</th>
+        <th>Type</th>
+        <th>Perfection Required</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+        <td>Forklift #123</td>
+        <td>Equipment</td>
+        <td>UCC Filing</td>
+        <td>✔ Filed</td>
+      </tr>
+      <tr>
+        <td>Delivery Van VIN 456</td>
+        <td>Serial-number Goods</td>
+        <td>Vehicle Registration</td>
+        <td class="flag">⚠ Missing</td>
+      </tr>
+      <tr>
+        <td>Accounts Receivable</td>
+        <td>Intangible</td>
+        <td>UCC Filing</td>
+        <td>✔ Filed</td>
+      </tr>
+    </table>
+
+    <h2>Deadline Monitoring</h2>
+    <table>
+      <tr>
+        <th>Task</th>
+        <th>Deadline</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+        <td>Renew UCC Filing</td>
+        <td>2026-01-15</td>
+        <td>Upcoming</td>
+      </tr>
+      <tr>
+        <td>Vehicle Registration Filing</td>
+        <td>2025-12-01</td>
+        <td class="flag">⚠ Overdue</td>
+      </tr>
+    </table>
+
+    <h2>Compliance Flags</h2>
+    <ul>
+      <li class="flag">Debtor name mismatch in filing</li>
+      <li class="flag">Jurisdiction check required for cross-border collateral</li>
+      <li>All other filings current</li>
+    </ul>
+  </div>
+
+  <footer>
+    <p>© 2025 CollateralLens MVP</p>
+  </footer>
+</body>
+</html>
